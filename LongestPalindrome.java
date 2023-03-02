@@ -47,6 +47,7 @@ public class LongestPalindrome {
         return s.substring(begin_ret, end_ret);
     }
 
+
     public static void main(String[] args) {
         String s = "ccc";
         LongestPalindrome l = new LongestPalindrome();
