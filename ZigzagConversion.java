@@ -20,6 +20,10 @@ public class ZigzagConversion {
         }
         return sb.toString();
     }
+    
+    // other thoughts:
+    // 1. Use one StringBuilder, access row by row, not from s.start to end
+    // 2. create one char[]/ArrayList, which holds 1.row+last.row+middle.rows*2, and then remove 0s
 
     public static void main(String[] args) {
         ZigzagConversion z = new ZigzagConversion();
