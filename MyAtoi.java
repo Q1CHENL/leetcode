@@ -35,6 +35,11 @@ public class MyAtoi {
         }
         return (int) (signed ? -ret : ret);
     }
+    
+    // better solution would be:
+    // have a int i = 0, and move it forward till valid start met
+    // start loop until non-digit
+    // this is better than directly loop through s.length
 
     public static void main(String[] args) {
         MyAtoi m = new MyAtoi();
