@@ -3,6 +3,7 @@ public class ReverseInteger {
     // inspired by ChatGPT
     public int reverse(int x) {
         boolean signed = false;
+        // reverse using StringBuilder
         String str = new StringBuilder(String.valueOf(x)).reverse().toString();
         if (str.charAt(str.length() - 1) == '-') {
             str = str.substring(0, str.length() - 1);
@@ -21,7 +22,8 @@ public class ReverseInteger {
         return reversed;
     }
 
-//    My original thought
+//    My original thought: no reversing, but direct addition using pow(a, b)
+//    Cons: validity check is complex
 //    public int reverse(int x) {
 //        int reversed = 0;
 //        boolean signed = false;
