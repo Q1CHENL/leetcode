@@ -6,18 +6,19 @@
 class regular_expression_matching {
 public:
 
+    // recursive method translated from official java solution, but timeout
+    // efficient enough for instances in main tho
     bool isMatch(std::string s, std::string p) {
         if (p.empty()) return s.empty();
         bool first_match = (!s.empty() && (p.at(0) == s.at(0) || p.at(0) == '.'));
-
         if (p.length() >= 2 && p.at(1) == '*') {
             return (isMatch(s, p.substr(2))) || (first_match && isMatch(s.substr(1), p));
         } else {
             return first_match && isMatch(s.substr(1), p.substr(1));
         }
     }
-    // idea: collect all pattern into a vector
-    // then try to match s iteratively
+//    idea: collect all pattern into a vector
+//    then try to match s iteratively
 //    bool isMatch(std::string s, std::string p) {
 //        int origin_len = s.length();
 //        int pure_len = p.length();
@@ -128,6 +129,7 @@ int main() {
     //aa*.*
     bool v = r.isMatch("aababbabacaabacbbbc", ".b*ac*.*c*a*b*.*");
     std::cout << v << std::endl;
+    //From leetcode comment section
     std::map<std::pair<std::string, std::string>, bool> invalidCases = {
             {{"aab",                 "c*a*b"},                      true},
             {{"mississippi",         "mis*is*p*."},                 false},
