@@ -16,6 +16,8 @@ public:
         }
         return true;
     }
+    // Another method would be:
+    // add reversely and check if the sum equals x
 };
 
 int main() {
