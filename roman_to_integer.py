@@ -1,5 +1,5 @@
 class RomanToInteger:
-
+    
     # use map to avoid if statements
     def roman_to_int(self, s: str) -> int:
         # Define the roman to integer conversion dictionary
@@ -43,12 +43,11 @@ class RomanToInteger:
 
         return converted
 
-
 r = RomanToInteger()
 res = r.roman_to_int('sssss')
 print(res)
 
-# My original idea: loop through s, check every char with if
+# My original idea: loop through s, check every char with if, which consumes time
 # class Solution:
 #     def roman_to_int(self, s: str) -> int:
 #         rd = s[::-1]
