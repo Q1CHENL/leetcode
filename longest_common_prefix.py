@@ -12,9 +12,12 @@ class LongestCommonPrefix:
                     return (strs[0])[0:end]
             end += 1   
         return  strs[0]
-    
 
-strs = ["dog","racecar","car"]
+# A code block starts with a colon (:) and all statements
+# in the block must be indented at the same level. The block
+# ends when the indentation returns to the previous level.    
+    
+strs = ["flower","flow","flight"]
 lcp = LongestCommonPrefix()
 s = lcp.longest_common_prefix(strs)
 print(s)
