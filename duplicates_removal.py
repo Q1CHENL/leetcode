@@ -20,6 +20,8 @@ class DuplicatesRemoval:
     # insert unique number to the original list
     # i is always ahead of insertIndex so value of nums[i]
     # does not get affected by insertion
+    # Need to slice the result list if we don't want the
+    # the first k elements but a new modified list
     def remove_duplicates(self, nums: list[int]) -> int:
         size = len(nums)
         insertIndex = 1
