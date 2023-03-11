@@ -6,6 +6,10 @@ class ListNode:
         self.val = val
         self.next = next
 
+# list1 list2 are copied refs
+# so list1 = list1.next does not change what the list1 outside the function points to
+# but list1.val = 1 will because both list1 points to the same object
+# Can use list1 list2 instead of cursors directly
 class MergeTwoSortedLists:
     def merge_two_lists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
         if list1 == None:
