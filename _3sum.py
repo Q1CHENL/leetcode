@@ -58,7 +58,7 @@ class ThreeSum:
     #                 k -= 1 # try smaller number
     #     return triplets  # convert set to list of lists
 
-    # My original idea: 3 loops, time consuming
+    # My original idea: 3 loops, time consuming, correct but time exceeded
     # def three_sum(self, nums: list[int]) -> list[list[int]]:
     #     triplets = set()
     #     len_nums = len(nums)
