@@ -1,10 +1,10 @@
 class LengthOfLastWord:
     def length_of_last_word(self, s: str) -> int:
         length = 0
-        met = False
+        met = False # meet the last word or not
         for c in reversed(s):
             if c == ' ':
-                if met == False:
+                if not met:
                     continue
                 else:
                     break
