@@ -1,16 +1,16 @@
 
-public class ListNode {
+public class ListNodeAddTwoNumbers {
     int val;
-    ListNode next;
+    ListNodeAddTwoNumbers next;
 
-    ListNode() {
+    ListNodeAddTwoNumbers() {
     }
 
-    ListNode(int val) {
+    ListNodeAddTwoNumbers(int val) {
         this.val = val;
     }
 
-    ListNode(int val, ListNode next) {
+    ListNodeAddTwoNumbers(int val, ListNodeAddTwoNumbers next) {
         this.val = val;
         this.next = next;
     }
@@ -19,17 +19,17 @@ public class ListNode {
 //    Output: [7,0,8]
 //    Explanation: 342 + 465 = 807.
 
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    public ListNodeAddTwoNumbers addTwoNumbers(ListNodeAddTwoNumbers l1, ListNodeAddTwoNumbers l2) {
         // check null
         if (l1 == null || l2 == null) {
             return null;
         }
         //ret
-        ListNode sum = new ListNode();
+        ListNodeAddTwoNumbers sum = new ListNodeAddTwoNumbers();
         // cursors
-        ListNode curSum = sum;
-        ListNode cur1 = l1;
-        ListNode cur2 = l2;
+        ListNodeAddTwoNumbers curSum = sum;
+        ListNodeAddTwoNumbers cur1 = l1;
+        ListNodeAddTwoNumbers cur2 = l2;
 
         // values
         int val1;
@@ -51,7 +51,7 @@ public class ListNode {
 
             // create new node only when not both null or both null but carry
             if ((cur1 != null || cur2 != null) || carry == 1) {
-                curSum.next = new ListNode();
+                curSum.next = new ListNodeAddTwoNumbers();
                 curSum = curSum.next;
             }
         }

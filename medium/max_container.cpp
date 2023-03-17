@@ -6,7 +6,6 @@
 class max_container {
 public:
 
-
 // LeetCode solution, a lot faster:
 // The intuition behind this approach is that the area formed between the
 // lines will always be limited by the height of the shorter line. Further,
