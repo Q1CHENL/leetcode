@@ -1,4 +1,7 @@
 class AddBinary(object):
+    # Other conversion methods:
+    # 1. bin(), takes an integer, converts to binary
+    # 2. int('ff', 16), int('1010', 2)
     def add_binary(self, a, b):
         """
         :type a: str
@@ -16,7 +19,8 @@ class AddBinary(object):
         else:
             longer = b
             shorter = a
-        zeros = '0' * (max_len - min_len) # append 0s to shorter, can also use a = a.zfill(max_len)
+        # append 0s to shorter, can also use a = a.zfill(max_len)    
+        zeros = '0' * (max_len - min_len) 
         shorter = zeros + shorter
 
         for i in range(max_len - 1, -1, -1):
@@ -29,8 +33,8 @@ class AddBinary(object):
             
         if flag:
             res += '1'
-        return res[::-1]
 
+        return res[::-1]
 
 ab = AddBinary()
 a = "11"
