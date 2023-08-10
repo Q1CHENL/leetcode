@@ -1,25 +1,52 @@
-# From leetcode, even 3x faster than 2 ptr method
 from collections import *
+# Given an integer array nums, return ALL the triplets [nums[i], nums[j], nums[k]] such 
+# that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
+# Notice that the solution set must not contain duplicate triplets.
 
+# From leetcode, even 3x faster than 2 ptr method
 class ThreeSum:
     def threeSum(self, nums):
         triplets = []
-        d = Counter(nums) # remove duplicates, and Counter is a dict, which makes lookup so fast
+        # get the count of each number in nums: 
+        # remove duplicates, and Counter is a dict, which makes lookup so fast
+        d = Counter(nums) 
+        
+        # This for-loop check for triplets that could contains duplicates
         for num, count in d.items():
+            # No duplicates: Such case will be handled in the loop below
             if count < 2:
                 continue
+            # If we found a number num that appears twice, then we need to
+            # find a target = -2 * num such that the sum of those three is 0 
             target = -2 * num
+            # if the target is not found
             if target not in d:
                 continue
+            # Or the target is 0, which means our num was also 0(== target): case [0, 0, 0]
+            # which means we must have at least 3 0s in the list, otherwise we would add
+            # [0, 0, 0] to the result which is wrong.
+            # This ensures that we don't take one of the num == 0 as our target 
             if target == 0 and count < 3:
                 continue
+            # add the triplet to our final result set
             triplets.append([target, num, num])
+        
+        # handle unique numbers
         keys = sorted(d.keys())
         for i, a in enumerate(keys):
+            # We break out of the loop if we encounter a non-negative number because
+            # we're interested in numbers such that when combined with two other 
+            # numbers, they sum up to zero.
             if a >= 0:
                 break
+            # For each unique number a, we iterate over the remaining numbers to find 
+            # pairs b and c such that a + b + c = 0.
             for b in keys[i + 1:]:
                 c = -a - b
+                # However, if c is less than or equal to b, we break out of the loop. 
+                # This is because we've already considered such combinations in the 
+                # past (due to sorting), and it also helps in ensuring that the 
+                # solution does not contain duplicate triplets.
                 if c <= b:
                     break
                 if c not in d: # lookup in Counter dict, O(1) time, main reason why this method fast
@@ -29,8 +56,8 @@ class ThreeSum:
         # l = bisect.bisect_left(keys, -(a + keys[-1]), i + 1)
         # r = bisect.bisect_left(keys, -(a / 2), l)
 
-    # class ThreeSum:
     # From ChatGPT: 2 ptrs method
+    # class ThreeSum:
     # def three_sum(self, nums: list[int]) -> list[list[int]]:
     #     triplets = []
     #     len_nums = len(nums)
