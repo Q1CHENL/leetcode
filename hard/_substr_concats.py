@@ -4,6 +4,11 @@ from collections import Counter
 class SubstrFinder(object):
     # Sliding window method: from ChatGPT with my modification
     def find_substring(self, s, words):
+        """
+        :type s: str
+        :type words: List[str]
+        :rtype: List[int]
+        """
         if not s or not words:
             return []
 
