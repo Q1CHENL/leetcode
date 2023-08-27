@@ -1,3 +1,23 @@
+# What is Backtracking?
+# Backtracking is a general algorithm for finding all (or some) solutions to computational 
+# problems, particularly constraint satisfaction problems. It incrementally builds 
+# candidates for solutions, but abandons a candidate ("backtracks") as soon as it 
+# determines that it cannot be extended to a valid solution. The classic metaphor for 
+# backtracking is that of a maze: you want to find a path out, but you may have to go down 
+# a few wrong paths before you find the right one.
+
+# Why is it Called "Backtracking"?
+# The name "backtracking" comes from the idea that when you reach a point where you cannot 
+# proceed any further (a dead end), **you backtrack to the most recent point where you have 
+# the option to make a different choice**.
+
+# Is This a Classic Example of Backtracking?
+# Yes, the "Combination Sum" problem is a classic example of backtracking. You start by 
+# selecting one element from the list and then proceed to find a combination that sums up 
+# to the remaining target. If you can't find such a combination, you backtrack and try 
+# another element. This process is repeated recursively until all possible combinations 
+# are found.
+
 from typing import List
 # Given an array of distinct integers candidates and a target integer target, return a
 # list of all unique combinations of candidates where the chosen numbers sum to target.
