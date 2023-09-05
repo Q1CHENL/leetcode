@@ -4,7 +4,6 @@
 # Kadane's Algorithm
 # The most crucial observation:
 # The core observation is that the maximum sum subarray ending at index i is either:
-
 # 1. The element at index i itself, or
 # 2. The maximum sum subarray ending at index i-1 extended to include the element at index i.
 
@@ -22,7 +21,23 @@
 # 2. Whether the maximum sum subarray up to that point should be extended or reset
 
 
-# from typing import List
+from typing import List
 
-# class MaxSubArray:
-#     def max_sub_array(self, nums: List[int]) -> int:
+class MaxSubArray:
+    def max_sub_array(self, nums: List[int]) -> int:
+        if len(nums) == 0:
+            return 0
+        global_max = nums[0]
+        current_max = nums[0]
+        for value in nums[1:]:
+            current_max = value if value > value + current_max else value + current_max
+            if current_max > global_max:
+                global_max = current_max
+        return global_max
+
+nums = [5, 4, -1, 7, 8]
+nums1 = [-2, 1,-3, 4, -1, 2, 1, -5, 4]
+msa = MaxSubArray()
+res = msa.max_sub_array(nums)
+print(res)
+
