@@ -24,6 +24,7 @@
 from typing import List
 
 class MaxSubArray:
+    # My solution after looking up kadane's algorithm
     def max_sub_array(self, nums: List[int]) -> int:
         if len(nums) == 0:
             return 0
