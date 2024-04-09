@@ -1,3 +1,4 @@
-# LeetCode
-My leetcode solutions<br />
-Code with Prefix '_' means couldn't solve the problem myself: wrong answer or time exceeded
+# My LeetCode Solutions
+
+- **Files with Prefix '_': couldn't solve the problem myself due to wrong answer/time exceeded/memory exceeded**
+- **Learn new languages while solving problems**
