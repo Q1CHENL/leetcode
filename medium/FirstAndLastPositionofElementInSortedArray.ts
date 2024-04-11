@@ -1,6 +1,7 @@
 // For example: let nums = [5, 7, 7, 8, 8, 10];
 // binarySearch will find the second 8
 // helperSearch will search the left boundary in [5, 7, 7, 8, 8] and right boundary in [8, 10] 
+// and returns 3 and 0 respectively
 function searchRange(nums: number[], target: number): number[] {
     let midIndex = binarySearch(nums, target)
     if (midIndex == -1) {
